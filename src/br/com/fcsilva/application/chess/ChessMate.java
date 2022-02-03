@@ -1,8 +1,6 @@
 package br.com.fcsilva.application.chess;
 
 import br.com.fcsilva.application.boardgame.Board;
-import br.com.fcsilva.application.boardgame.Position;
-import br.com.fcsilva.application.chess.pieces.King;
 import br.com.fcsilva.application.chess.pieces.Rook;
 
 public class ChessMate {
@@ -25,9 +23,14 @@ public class ChessMate {
         return mat;
     }
 
+    private void placeNewPiece(char column, int row, ChessPiece piece){
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
+    }
+
     private void inicialSetup(){
-      board.placePiece(new Rook(board, Color.WHITE), new Position(2,1));
-      board.placePiece(new King(board, Color.BLACK), new Position(3,4));
-      board.placePiece(new King(board, Color.WHITE), new Position(7,4));
+      placeNewPiece('b', 6, new Rook(board, Color.WHITE));
+      placeNewPiece('e', 8, new Rook(board, Color.WHITE));
+      placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+
     }
 }
