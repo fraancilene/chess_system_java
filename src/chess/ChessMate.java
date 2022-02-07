@@ -1,10 +1,11 @@
 package br.com.fcsilva.application.chess;
 
 import br.com.fcsilva.application.boardgame.Board;
+import br.com.fcsilva.application.chess.pieces.King;
 import br.com.fcsilva.application.chess.pieces.Rook;
 
 public class ChessMate {
-    private Board board;
+    private final Board board;
 
     public ChessMate() {
         board = new Board(8,8);
@@ -28,9 +29,19 @@ public class ChessMate {
     }
 
     private void inicialSetup(){
-      placeNewPiece('b', 6, new Rook(board, Color.WHITE));
-      placeNewPiece('e', 8, new Rook(board, Color.WHITE));
+      placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+      placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+      placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+      placeNewPiece('e', 2, new Rook(board, Color.WHITE));
       placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+      placeNewPiece('d', 1, new King(board, Color.WHITE));
+
+      placeNewPiece('c', 7, new Rook(board, Color.WHITE));
+      placeNewPiece('c', 8, new Rook(board, Color.WHITE));
+      placeNewPiece('d', 7, new Rook(board, Color.WHITE));
+      placeNewPiece('e', 7, new Rook(board, Color.WHITE));
+      placeNewPiece('e', 8, new Rook(board, Color.WHITE));
+      placeNewPiece('d', 8, new King(board, Color.WHITE));
 
     }
 }

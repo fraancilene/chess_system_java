@@ -1,4 +1,4 @@
-package br.com.fcsilva.application.boardgame;
+package boargame;
 
 public class Piece {
     protected Position position;

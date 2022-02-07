@@ -1,4 +1,4 @@
-package br.com.fcsilva.application.boardgame;
+package boargame;
 
 public class BoardException extends RuntimeException{
     private static final long serialVersionUID = 1L;

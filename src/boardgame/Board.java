@@ -1,9 +1,9 @@
-package br.com.fcsilva.application.boardgame;
+package boargame;
 
 public class Board {
     private int rows;
     private int columns;
-    private final Piece [][] pieces;
+    private final Piece[][] pieces;
 
     public Board(int rows, int columns) {
         if(rows < 1 || columns < 1){
@@ -42,6 +42,20 @@ public class Board {
         }
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
+    }
+
+    public Piece removePiece(Position position){
+        if (!positionExists(position)){
+            throw new BoardException("Position not on the board");
+        }
+        // verificando se a posição está vazia
+        if (piece(position) == null){
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
     }
 
     public boolean positionExists(int row, int column){

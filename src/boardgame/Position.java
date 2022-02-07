@@ -1,4 +1,4 @@
-package br.com.fcsilva.application.boardgame;
+package boargame;
 
 public class Position {
     private int row;
